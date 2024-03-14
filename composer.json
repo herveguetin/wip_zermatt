@@ -20,9 +20,10 @@
     },
     "version": "2.4.6-p4",
     "require": {
-        "magento/product-community-edition": "2.4.6-p4",
+        "maddlen/zermatt": "^1.0",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
-        "magento/composer-root-update-plugin": "~2.0"
+        "magento/composer-root-update-plugin": "~2.0",
+        "magento/product-community-edition": "2.4.6-p4"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -81,6 +82,10 @@
         {
             "type": "composer",
             "url": "https://repo.magento.com/"
+        },
+        {
+            "type": "path",
+            "url": "./packages/maddlen/zermatt"
         }
     ],
     "extra": {

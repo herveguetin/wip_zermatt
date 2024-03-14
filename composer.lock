@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05b95001e03b74fcfe72321278560811",
+    "content-hash": "88762a2e6ba760b5987123353dfcb23a",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -4932,6 +4932,34 @@
                 }
             ],
             "time": "2024-01-28T23:22:08+00:00"
+        },
+        {
+            "name": "maddlen/zermatt",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "./packages/maddlen/zermatt",
+                "reference": "dfdb45b49aaea428625777826f4ee1c457f93287"
+            },
+            "require": {
+                "magento/framework": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Maddlen\\Zermatt\\": ""
+                }
+            },
+            "license": [
+                "Massachusetts Institute of Technology License (MITL)"
+            ],
+            "description": "AlpineJS in Magento.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "magento/adobe-stock-integration",
