@@ -22,7 +22,7 @@ class App
 
     public function filepath(): string
     {
-        $this->manifest = $this->assetRepo->createAsset('Maddlen_Zermatt::' . self::DIST_DIR . '/.vite/manifest.json');
+        $this->manifest = $this->assetRepo->createAsset(self::DIST_DIR . '.vite/manifest.json');
         $this->manifestData = json_decode($this->manifest->getContent(), true);
         return self::DIST_DIR . $this->manifestData['index.html']['file'];
     }

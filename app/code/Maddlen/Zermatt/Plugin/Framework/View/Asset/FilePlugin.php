@@ -24,6 +24,7 @@ class FilePlugin
     {
         if (str_contains($result, 'Maddlen_Zermatt/index.js')) {
             $result = str_replace('index.js', $this->app->filepath(), $result);
+            $result = str_replace('Maddlen_Zermatt/', '', $result);
         }
         return $result;
     }

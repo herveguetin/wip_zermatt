@@ -1,11 +1,23 @@
 {
-  "name": "zermatt-core",
-  "version": "1.0.0",
+  "name": "@maddlen/zermatt-core",
+  "version": "1.0.1",
   "description": "Zermatt utils.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maddlen/zermatt-core.git"
+  },
+  "keywords": [
+    "Zermatt",
+    "utils"
+  ],
+  "bugs": {
+    "url": "https://github.com/maddlen/zermatt-core/issues"
+  },
+  "homepage": "https://github.com/maddlen/zermatt-core#readme"
 }
