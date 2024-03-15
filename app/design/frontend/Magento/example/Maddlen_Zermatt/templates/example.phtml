@@ -1,0 +1,12 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<div x-data="Example" x-text="greet()"></div>
+<?= zermatt_variable('greeting', 'Hello') ?>
+
+<div x-data="{greeting: Zermatt.Variables.greeting}" x-text="greeting"></div>
+

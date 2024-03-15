@@ -1,0 +1,17 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */
+
+use Maddlen\Zermatt\Service\App\Variable;
+use Magento\Framework\View\Element\Template;
+
+?>
+<?php
+/** @var Template $block */
+?>
+<script>
+    window.Zermatt = {
+        Variables: JSON.parse('<?= json_encode(Variable::all()) ?>')
+    }
+</script>
