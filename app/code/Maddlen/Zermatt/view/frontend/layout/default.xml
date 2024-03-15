@@ -3,4 +3,9 @@
     <head>
         <script src="Maddlen_Zermatt::index.js" defer="defer"/>
     </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block name="zermatt.variables" template="Maddlen_Zermatt::variables.phtml"/>
+        </referenceContainer>
+    </body>
 </page>
