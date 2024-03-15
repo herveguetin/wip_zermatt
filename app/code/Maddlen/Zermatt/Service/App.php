@@ -5,25 +5,29 @@
 
 namespace Maddlen\Zermatt\Service;
 
-use Magento\Framework\View\Asset\File;
+use Magento\Framework\Component\ComponentRegistrarInterface as ComponentRegistrar;
 use Magento\Framework\View\Asset\Repository;
 
 class App
 {
-    const DIST_DIR = 'zermatt' . DIRECTORY_SEPARATOR . 'dist' . DIRECTORY_SEPARATOR;
-    private array $manifestData;
-    private File $manifest;
+    const DIST_DIR = 'zermatt/dist/';
 
     public function __construct(
-        protected readonly Repository $assetRepo
+        protected readonly Repository         $assetRepo,
+        protected readonly ComponentRegistrar $componentRegistrar
     )
     {
     }
 
-    public function filepath(): string
+    public function sourceDir(): string
     {
-        $this->manifest = $this->assetRepo->createAsset(self::DIST_DIR . '.vite/manifest.json');
-        $this->manifestData = json_decode($this->manifest->getContent(), true);
-        return self::DIST_DIR . $this->manifestData['index.html']['file'];
+        return $this->componentRegistrar->getPath('module', 'Maddlen_Zermatt') . '/view/frontend/web/zermatt';
+    }
+
+    public function entryFilepath(): string
+    {
+        $manifest = $this->assetRepo->createAsset(self::DIST_DIR . '.vite/manifest.json');
+        $manifestData = json_decode($manifest->getContent(), true);
+        return self::DIST_DIR . $manifestData['index.html']['file'];
     }
 }
