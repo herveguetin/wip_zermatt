@@ -1,7 +1,19 @@
+import Config from './zermatt.config.js'
 import Alpine from 'alpinejs'
 import Zermatt from 'zermatt-core'
 
 window.Zermatt = Zermatt
 window.Alpine = Alpine
 
-Alpine.start()
+Zermatt.Module.loadAll(Config.modules)
+    .then(modules => {
+        modules.map(module => {
+            Alpine.data(module.name, function () {
+                return module.default
+            })
+        })
+        Alpine.start()
+    }).catch(error => {
+        console.error('An error occurred:', error)
+    }
+)
