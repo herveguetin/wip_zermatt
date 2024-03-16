@@ -1,0 +1,19 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Example\Theme\Block\Collection $block */
+?>
+<?php zermatt_variable('collection', $block->getCollection()); ?>
+<?php zermatt_variable('total_count', (float) count($block->getCollection())); ?>
+<h1>Collection</h1>
+<div x-data="{collection: Zermatt.Variables.collection}">
+    <template x-for="item in collection">
+        <div>
+            <div x-text="item.attribute_code"></div>
+            <div x-text="Zermatt.Url.slugify(item.label)"></div>
+        </div>
+    </template>
+    <div x-data="{total_count: Zermatt.Variables.total_count}" x-text="total_count"></div>
+</div>
