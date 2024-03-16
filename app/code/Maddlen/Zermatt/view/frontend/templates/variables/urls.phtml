@@ -1,0 +1,13 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */
+
+use Magento\Framework\View\Element\Template; ?>
+<?php
+/** @var Template $block */
+?>
+<?php
+zermatt_variable('viewUrl', $escaper->escapeJs($block->getViewFileUrl('/')));
+zermatt_variable('translationUrl', $escaper->escapeJs($block->getViewFileUrl('/js-translation.json')));
+?>

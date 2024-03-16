@@ -9,7 +9,7 @@
         </referenceContainer>
         <referenceContainer name="before.body.end">
             <container name="zermatt.variables">
-                <block name="zermatt.variables.view_url" template="Maddlen_Zermatt::variables/view-url.phtml"/>
+                <block name="zermatt.variables.urls" template="Maddlen_Zermatt::variables/urls.phtml"/>
             </container>
             <block name="zermatt.variables.init" template="Maddlen_Zermatt::init.phtml" after="-"/>
         </referenceContainer>
