@@ -4,6 +4,7 @@
         <referenceContainer name="content">
             <block name="zermatt_examples.knockout" template="Maddlen_ZermattExamples::knockout.phtml"/>
             <block name="zermatt_examples.bind" template="Maddlen_ZermattExamples::bind.phtml"/>
+            <block name="zermatt_examples.translate" template="Maddlen_ZermattExamples::translate.phtml"/>
         </referenceContainer>
     </body>
 </page>
