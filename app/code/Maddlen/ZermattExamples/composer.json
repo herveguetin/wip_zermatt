@@ -1,0 +1,21 @@
+{
+  "name": "maddlen/module-zermatt-examples",
+  "version": "1.0.0",
+  "description": "Examples of Zermatt usage.",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "maddlen/zermatt": "1.0.*"
+  },
+  "license": [
+    "Massachusetts Institute of Technology License (MITL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Maddlen\\ZermattExamples\\": ""
+    }
+  }
+}
