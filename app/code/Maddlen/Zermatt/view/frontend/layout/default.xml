@@ -5,7 +5,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block name="zermatt.example" template="Maddlen_Zermatt::example.phtml"/>
+            <block name="zermatt.welcome" template="Maddlen_Zermatt::welcome.phtml"/>
         </referenceContainer>
         <referenceContainer name="before.body.end">
             <container name="zermatt.variables">
