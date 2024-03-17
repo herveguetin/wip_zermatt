@@ -7,4 +7,11 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Translation\Model\Js\Config">
+        <arguments>
+            <argument name="patterns" xsi:type="array">
+                <item name="zermatt" xsi:type="string"><![CDATA[#\$t\(\s*([\'"])(?<translate>.+?)\1(?:\s*,\s*([\'"])(?<param>.+?)\3)*#]]></item>
+            </argument>
+        </arguments>
+    </type>
 </config>
