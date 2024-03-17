@@ -5,7 +5,7 @@
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
 ?>
-<h2>Component "<?= $block->getData('name') ?>"</h2>
+<h4>Component "<?= $block->getData('name') ?>"</h4>
 <?php if ($subPrefix = $block->getData('sub_prefix')): ?>
-    <?php zermatt_component("Example_Theme::{$subPrefix}-component.phtml", ['name' => $block->getData('name')]) ?>
+    <?php zermatt_component("Maddlen_ZermattExamples::components/{$subPrefix}-component.phtml", ['name' => $block->getData('name')]) ?>
 <?php endif; ?>

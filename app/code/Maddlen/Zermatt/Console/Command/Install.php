@@ -5,7 +5,7 @@
 
 namespace Maddlen\Zermatt\Console\Command;
 
-use Maddlen\Zermatt\Service\App\Install as AppInstall;
+use Maddlen\Zermatt\App\Install as AppInstall;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

@@ -3,8 +3,8 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
+use Maddlen\Zermatt\App\Variable;
 use Maddlen\Zermatt\Component\Component;
-use Maddlen\Zermatt\Service\App\Variable;
 use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Maddlen_Zermatt', __DIR__);

@@ -3,7 +3,7 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\Service;
+namespace Maddlen\Zermatt\App;
 
 use Magento\Framework\Component\ComponentRegistrarInterface as ComponentRegistrar;
 use Magento\Framework\View\Asset\Repository;

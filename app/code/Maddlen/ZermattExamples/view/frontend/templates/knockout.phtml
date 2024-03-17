@@ -7,6 +7,8 @@
 ?>
 
 <?php // The Alpine part ?>
+<h2>Knockout / Alpine communication</h2>
+<h4>Alpine</h4>
 <div x-data="{}">
     <form action="#">
         <input @input.debounce="$dispatch('zermatt_example:alpine_input', $event.target.value)" type="text">
@@ -14,6 +16,7 @@
 </div>
 
 <?php // The Knockout part ?>
+<h4>Magento UI Component</h4>
 <div data-bind="scope: 'zermatt_example_knockout'">
     <div data-bind="text: message()"></div>
 </div>

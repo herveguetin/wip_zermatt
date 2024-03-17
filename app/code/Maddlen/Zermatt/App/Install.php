@@ -3,10 +3,9 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\Service\App;
+namespace Maddlen\Zermatt\App;
 
 use Exception;
-use Maddlen\Zermatt\Service\App;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Filesystem;
 use Magento\Theme\Model\ResourceModel\Theme\Collection;

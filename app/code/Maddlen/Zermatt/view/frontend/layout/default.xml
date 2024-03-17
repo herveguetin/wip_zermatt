@@ -11,7 +11,7 @@
             <container name="zermatt.variables">
                 <block name="zermatt.variables.config" template="Maddlen_Zermatt::variables/config.phtml">
                     <arguments>
-                        <argument name="config" xsi:type="object">Maddlen\Zermatt\Service\App\Config</argument>
+                        <argument name="config" xsi:type="object">Maddlen\Zermatt\App\Config</argument>
                     </arguments>
                 </block>
             </container>

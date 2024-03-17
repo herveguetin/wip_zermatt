@@ -5,7 +5,7 @@
 
 namespace Maddlen\Zermatt\Plugin\Framework\View\Asset;
 
-use Maddlen\Zermatt\Service\App;
+use Maddlen\Zermatt\App\App;
 use Magento\Framework\View\Asset\File;
 
 class FilePlugin

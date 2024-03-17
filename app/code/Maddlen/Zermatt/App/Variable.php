@@ -3,7 +3,7 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\Service\App;
+namespace Maddlen\Zermatt\App;
 
 use InvalidArgumentException;
 use Magento\Framework\Data\Collection;
