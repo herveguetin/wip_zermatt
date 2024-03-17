@@ -6,21 +6,25 @@
 namespace Maddlen\Zermatt\Service\App;
 
 use Magento\Framework\Escaper;
+use Magento\Framework\Locale\FormatInterface;
 use Magento\Framework\Locale\Resolver;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 use Magento\Framework\View\Element\Text;
 use Magento\Framework\View\Element\TextFactory;
+use Magento\Store\Model\StoreManager;
 
 class Config implements ArgumentInterface
 {
     private Text $emptyBlock;
 
     public function __construct(
-        protected readonly UrlInterface $url,
-        protected readonly TextFactory  $blockFactory,
-        protected readonly Resolver     $locale,
-        protected readonly Escaper      $escaper
+        protected readonly UrlInterface    $url,
+        protected readonly TextFactory     $blockFactory,
+        protected readonly Resolver        $locale,
+        protected readonly Escaper         $escaper,
+        protected readonly FormatInterface $localeFormat,
+        protected readonly StoreManager    $storeManager
     )
     {
         $this->emptyBlock = $this->blockFactory->create();
@@ -37,10 +41,15 @@ class Config implements ArgumentInterface
     private function _get(): array
     {
         return [
-            'locale' => $this->locale->getLocale(),
             'baseUrl' => $this->url->getUrl('/'),
             'viewUrl' => $this->emptyBlock->getViewFileUrl('/'),
             'translationUrl' => $this->emptyBlock->getViewFileUrl('/js-translation.json'),
+            'locale' => $this->locale->getLocale(),
+            'currency' => [
+                'code' => $this->storeManager->getStore()->getCurrentCurrencyCode(),
+                'symbol' => $this->storeManager->getStore()->getCurrentCurrency()->getCurrencySymbol()
+            ],
+            'priceFormat' => $this->localeFormat->getPriceFormat(),
         ];
     }
 }
