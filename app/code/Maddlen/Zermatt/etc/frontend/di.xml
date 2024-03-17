@@ -4,4 +4,8 @@
         <plugin name="zermatt_view_asset_file_plugin"
                 type="Maddlen\Zermatt\Plugin\Framework\View\Asset\FilePlugin"/>
     </type>
+    <type name="Magento\Framework\View\Layout">
+        <plugin name="zermatt_layout_plugin"
+                type="Maddlen\Zermatt\Plugin\View\LayoutPlugin"/>
+    </type>
 </config>

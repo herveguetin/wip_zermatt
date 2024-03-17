@@ -1,0 +1,11 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<h2>Component "<?= $block->getData('name') ?>"</h2>
+<?php if ($subPrefix = $block->getData('sub_prefix')): ?>
+    <?php zermatt_component("Example_Theme::{$subPrefix}-component.phtml", ['name' => $block->getData('name')]) ?>
+<?php endif; ?>
