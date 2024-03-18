@@ -1,18 +1,18 @@
 {
     "modules": [
         {
-            "name": "translation",
-            "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
-        },
-        {
             "name": "welcome",
             "path": "/zermatt/modules/welcome"
+        },
+        {
+            "name": "translation",
+            "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
         }
     ],
     "rewrites": [
         {
             "name": "welcome",
-            "path": "/Maddlen_Zermatt/zermatt/modules/welcome-rewrite"
+            "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome-rewrite"
         }
     ]
 }

@@ -1,8 +1,4 @@
 {
-  "modules": {
-    "welcome": "./modules/welcome"
-  },
-  "rewrites": {
-    "welcome": "./modules/welcome-rewrite"
-  }
+  "modules": {},
+  "rewrites": {}
 }
