@@ -1,6 +1,10 @@
 {
     "modules": [
         {
+            "name": "translation",
+            "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
+        },
+        {
             "name": "welcome",
             "path": "/zermatt/modules/welcome"
         }

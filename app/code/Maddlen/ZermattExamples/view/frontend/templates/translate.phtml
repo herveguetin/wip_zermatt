@@ -7,7 +7,7 @@ use Magento\Framework\View\Element\Template; ?>
 <?php
 /** @var Template $block */
 ?>
-<div x-data>
+<div x-data="translation">
     <h2>Translation</h2>
-    <div x-text=$t('Welcome to %1, %2', 'Zermatt', 'my friend!')"></div>
+    <div x-text="message"></div>
 </div>

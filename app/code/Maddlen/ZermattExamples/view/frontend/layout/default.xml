@@ -7,7 +7,7 @@
             <block name="zermatt_examples.bind" template="Maddlen_ZermattExamples::bind.phtml"/>
 
 
-            <!--<block name="zermatt_examples.translate" template="Maddlen_ZermattExamples::translate.phtml"/>-->
+            <block name="zermatt_examples.translate" template="Maddlen_ZermattExamples::translate.phtml"/>
 
 
             <block name="zermatt_examples.price" template="Maddlen_ZermattExamples::price.phtml"/>
