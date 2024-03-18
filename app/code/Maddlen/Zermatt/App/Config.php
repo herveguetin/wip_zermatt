@@ -30,12 +30,11 @@ class Config implements ArgumentInterface
         $this->emptyBlock = $this->blockFactory->create();
     }
 
-    public function get(): array
+    public function get(string $key = null): mixed
     {
         $config = $this->_get();
         array_walk($config, fn(&$value) => $value = is_string($value) ? $this->escaper->escapeJs($value) : $value);
-        return $config;
-
+        return $key ? $config[$key] : $config;
     }
 
     private function _get(): array

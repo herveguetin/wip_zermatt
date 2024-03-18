@@ -19,7 +19,8 @@ class Install
     public function __construct(
         protected readonly Collection $themeList,
         protected readonly Filesystem $filesystem,
-        protected readonly App        $app
+        protected readonly App        $app,
+        protected readonly LockFile   $lockFile
     )
     {
     }
@@ -29,6 +30,7 @@ class Install
         $this->setTargetThemeCode($targetThemeCode);
         $filesystem = new \Symfony\Component\Filesystem\Filesystem();
         $filesystem->mirror($this->app->sourceDir(), $this->getTargetThemeDir());
+        $this->lockFile->generate();
         return $this;
     }
 

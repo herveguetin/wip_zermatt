@@ -1,0 +1,14 @@
+{
+    "modules": [
+        {
+            "name": "welcome",
+            "path": "/zermatt/modules/welcome"
+        }
+    ],
+    "rewrites": [
+        {
+            "name": "welcome",
+            "path": "/Maddlen_Zermatt/zermatt/modules/welcome-rewrite"
+        }
+    ]
+}

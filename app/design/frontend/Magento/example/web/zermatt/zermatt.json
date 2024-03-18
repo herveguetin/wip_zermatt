@@ -1,0 +1,5 @@
+{
+  "modules": {
+    "welcome": "./modules/welcome"
+  }
+}
