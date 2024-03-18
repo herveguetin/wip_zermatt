@@ -75,7 +75,9 @@ class LockFile
     {
         foreach ($this->themesConfig as $theme => $themeConfig) {
             foreach ($this->modulesConfig as $module => $moduleConfig) {
-                $themeConfig = array_merge($moduleConfig, $themeConfig);
+                foreach (['modules', 'rewrites'] as $section) {
+                    $themeConfig[$section] = array_merge($moduleConfig[$section] ?? [], $themeConfig[$section] ?? []);
+                }
             }
             $this->mergedThemes[$theme] = $themeConfig;
         }
