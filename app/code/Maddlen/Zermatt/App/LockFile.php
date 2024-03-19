@@ -14,13 +14,12 @@ class LockFile
     private array $modulesConfig;
     private array $themesConfig;
     private array $mergedThemes = [];
-    private $themePaths = [];
+    private array $themePaths = [];
 
     public function __construct(
         protected readonly ModuleList         $moduleList,
         protected readonly ComponentRegistrar $componentRegistrar,
-        protected readonly ThemePackageList   $themePackageList,
-        protected readonly Config             $appConfig
+        protected readonly ThemePackageList   $themePackageList
     )
     {
     }
