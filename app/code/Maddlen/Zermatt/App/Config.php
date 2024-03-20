@@ -6,7 +6,6 @@
 namespace Maddlen\Zermatt\App;
 
 use Magento\Framework\Escaper;
-use Magento\Framework\Locale\FormatInterface;
 use Magento\Framework\Locale\Resolver;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
@@ -19,12 +18,11 @@ class Config implements ArgumentInterface
     private Text $emptyBlock;
 
     public function __construct(
-        protected readonly UrlInterface    $url,
-        protected readonly TextFactory     $blockFactory,
-        protected readonly Resolver        $locale,
-        protected readonly Escaper         $escaper,
-        protected readonly FormatInterface $localeFormat,
-        protected readonly StoreManager    $storeManager
+        protected readonly UrlInterface $url,
+        protected readonly TextFactory  $blockFactory,
+        protected readonly Resolver     $locale,
+        protected readonly Escaper      $escaper,
+        protected readonly StoreManager $storeManager
     )
     {
         $this->emptyBlock = $this->blockFactory->create();
@@ -47,8 +45,7 @@ class Config implements ArgumentInterface
             'currency' => [
                 'code' => $this->storeManager->getStore()->getCurrentCurrencyCode(),
                 'symbol' => $this->storeManager->getStore()->getCurrentCurrency()->getCurrencySymbol()
-            ],
-            'priceFormat' => $this->localeFormat->getPriceFormat(),
+            ]
         ];
     }
 }
