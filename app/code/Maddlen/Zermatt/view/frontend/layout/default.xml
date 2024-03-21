@@ -1,8 +1,5 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <script src="Maddlen_Zermatt::index.js" defer="defer"/>
-    </head>
     <body>
         <referenceContainer name="before.body.end">
             <container name="zermatt.variables">
@@ -12,7 +9,11 @@
                     </arguments>
                 </block>
             </container>
-            <block name="zermatt.init" template="Maddlen_Zermatt::init.phtml" after="-"/>
+            <block name="zermatt.init" template="Maddlen_Zermatt::init.phtml" after="-">
+                <arguments>
+                    <argument name="app" xsi:type="object">Maddlen\Zermatt\App\App</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>

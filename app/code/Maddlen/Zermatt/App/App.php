@@ -7,8 +7,9 @@ namespace Maddlen\Zermatt\App;
 
 use Magento\Framework\Component\ComponentRegistrarInterface as ComponentRegistrar;
 use Magento\Framework\View\Asset\Repository;
+use Magento\Framework\View\Element\Block\ArgumentInterface;
 
-class App
+class App implements ArgumentInterface
 {
     const DIST_DIR = 'zermatt/dist/';
 

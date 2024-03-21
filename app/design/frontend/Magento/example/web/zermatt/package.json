@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "i18next": "^23.10.1",
+    "laravel-precognition-alpine": "^0.5.4",
     "zermatt-core": "github:maddlen/zermatt-core"
   }
 }

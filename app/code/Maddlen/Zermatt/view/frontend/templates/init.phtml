@@ -9,7 +9,10 @@ use Magento\Framework\View\Element\Template;
 ?>
 <?php
 /** @var Template $block */
+/** @var \Maddlen\Zermatt\App\App $entryFile */
+$app = $block->getData('app');
 ?>
+<script type="module" src="<?= $block->getViewFileUrl($app->entryFilepath()) ?>"></script>
 <script>
     window.Zermatt = {
         Variables: JSON.parse('<?= json_encode(Variable::all()) ?>')
