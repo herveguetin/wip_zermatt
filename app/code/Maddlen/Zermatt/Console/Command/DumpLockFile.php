@@ -32,7 +32,7 @@ class DumpLockFile extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->lockFile->generate();
+        $this->lockFile->dump();
         return Command::SUCCESS;
     }
 }

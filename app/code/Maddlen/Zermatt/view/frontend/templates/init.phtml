@@ -9,7 +9,7 @@ use Magento\Framework\View\Element\Template;
 ?>
 <?php
 /** @var Template $block */
-/** @var \Maddlen\Zermatt\App\App $entryFile */
+/** @var \Maddlen\Zermatt\App\App $app */
 $app = $block->getData('app');
 ?>
 <script type="module" src="<?= $block->getViewFileUrl($app->entryFilepath()) ?>"></script>

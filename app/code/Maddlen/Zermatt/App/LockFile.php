@@ -25,7 +25,7 @@ class LockFile
     }
 
 
-    public function generate(): void
+    public function dump(): void
     {
         $this->loadModules();
         $this->loadThemes();
@@ -98,7 +98,6 @@ class LockFile
                 }
                 $finalConfig[$section] = $newConfigs;
             }
-
 
             $filePath = $this->themePaths[$theme] . '/web/zermatt/zermatt-lock.json';
             file_put_contents($filePath, json_encode($finalConfig, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));

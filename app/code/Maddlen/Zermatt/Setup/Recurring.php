@@ -21,6 +21,6 @@ class Recurring implements InstallSchemaInterface
 
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
-        $this->lockFile->generate();
+        $this->lockFile->dump();
     }
 }

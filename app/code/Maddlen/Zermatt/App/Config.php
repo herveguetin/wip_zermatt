@@ -35,7 +35,7 @@ class Config implements ArgumentInterface
         return $key ? $config[$key] : $config;
     }
 
-    private function _get(): array
+    protected function _get(): array
     {
         return [
             'baseUrl' => $this->url->getUrl('/'),

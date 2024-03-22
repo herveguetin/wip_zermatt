@@ -30,7 +30,7 @@ class Install
         $this->setTargetThemeCode($targetThemeCode);
         $filesystem = new \Symfony\Component\Filesystem\Filesystem();
         $filesystem->mirror($this->app->sourceDir(), $this->getTargetThemeDir());
-        $this->lockFile->generate();
+        $this->lockFile->dump();
         return $this;
     }
 
