@@ -6,36 +6,25 @@
 use Magento\Framework\View\Element\Template; ?>
 <?php
 /** @var Template $block */
+preg_match('/value="([^"]+)"/', $block->getBlockHtml('formkey'), $formKey);
+$xData = [
+    'name' => '',
+    'email' => '',
+    'form_key' => $formKey[1]
+]
 ?>
-<form x-data="{
-    form: $form('post', '/register', {
-        name: '',
-        email: ''
-    })
-}">
-    <label for="name">Name</label>
-    <input
-        id="name"
-        name="name"
-        x-model="form.name"
-        @change="form.validate('name')"
-    />
-    <template x-if="form.invalid('name')">
-        <div x-text="form.errors.name"></div>
-    </template>
+<form
+    x-ref="form"
+    action="<?= $block->getUrl('zermatt/examples/form') ?>"
+    x-data='<?= json_encode($xData) ?>'
+>
+    <div x-data="zermatt_form" x-cloak>
+        <?php zermatt_component('Maddlen_Zermatt::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
+        <?php zermatt_component('Maddlen_Zermatt::components/form/error.phtml', ['target' => 'name']) ?>
 
-    <label for="email">Email</label>
-    <input
-        id="email"
-        name="email"
-        x-model="form.email"
-        @change="form.validate('email')"
-    />
-    <template x-if="form.invalid('email')">
-        <div x-text="form.errors.email"></div>
-    </template>
+        <?php zermatt_component('Maddlen_Zermatt::components/form/text.phtml', ['label' => __('Email'), 'id' => 'email', 'name' => 'email']) ?>
+        <?php zermatt_component('Maddlen_Zermatt::components/form/error.phtml', ['target' => 'email']) ?>
 
-    <button :disabled="form.processing">
-        Create User
-    </button>
+        <?php zermatt_component('Maddlen_Zermatt::components/form/button.phtml', ['label' => __('Submit')]) ?>
+    </div>
 </form>

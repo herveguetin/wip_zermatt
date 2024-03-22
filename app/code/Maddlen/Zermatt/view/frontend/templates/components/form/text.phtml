@@ -1,0 +1,14 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<label for="name"><?= $block->getData('label') ?></label>
+<input
+    id="<?= $block->getData('id') ?>"
+    name="<?= $block->getData('name') ?>"
+    x-model="form.<?= $block->getData('name') ?>"
+    @change="form.validate('<?= $block->getData('name') ?>')"
+/>

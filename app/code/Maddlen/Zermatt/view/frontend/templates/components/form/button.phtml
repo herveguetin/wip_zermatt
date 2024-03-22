@@ -5,5 +5,4 @@
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
 ?>
-<h2>Welcome</h2>
-<div x-data="welcome" x-text="greet()"></div>
+<button @click.prevent="submit" :disabled="form.processing"><?= $block->getData('label') ?></button>

@@ -3,7 +3,7 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\Plugin\View;
+namespace Maddlen\Zermatt\Component\Plugin\View;
 
 use Maddlen\Zermatt\Component\Render;
 use Magento\Framework\View\Layout;
