@@ -19,12 +19,12 @@ $xData = [
     x-data='<?= json_encode($xData) ?>'
 >
     <div x-data="zermatt_form" x-cloak>
-        <?php zermatt_component('Maddlen_Zermatt::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
-        <?php zermatt_component('Maddlen_Zermatt::components/form/error.phtml', ['target' => 'name']) ?>
+        <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
+        <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'name']) ?>
 
-        <?php zermatt_component('Maddlen_Zermatt::components/form/text.phtml', ['label' => __('Email'), 'id' => 'email', 'name' => 'email']) ?>
-        <?php zermatt_component('Maddlen_Zermatt::components/form/error.phtml', ['target' => 'email']) ?>
+        <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Email'), 'id' => 'email', 'name' => 'email']) ?>
+        <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'email']) ?>
 
-        <?php zermatt_component('Maddlen_Zermatt::components/form/button.phtml', ['label' => __('Submit')]) ?>
+        <?php zermatt_component('Maddlen_ZermattExamples::components/form/button.phtml', ['label' => __('Submit')]) ?>
     </div>
 </form>
