@@ -3,7 +3,7 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\ZermattExamples\Controller\Examples;
+namespace Maddlen\ZermattExamples\Controller\Form;
 
 use Maddlen\Zermatt\FormRules\FormRulesActionInterface;
 use Maddlen\Zermatt\FormRules\Validate;
@@ -15,7 +15,7 @@ use Magento\Framework\UrlInterface;
 use Magento\Framework\Validator\EmailAddress;
 use Magento\Framework\Validator\NotEmpty;
 
-class Form implements FormRulesActionInterface, HttpPostActionInterface
+class Index implements FormRulesActionInterface, HttpPostActionInterface
 {
     public function __construct(
         protected readonly ResultFactory    $resultFactory,

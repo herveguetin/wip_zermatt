@@ -7,12 +7,13 @@ namespace Maddlen\Zermatt\App;
 
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Module\ModuleList;
+use Magento\Framework\View\Design\Theme\ThemePackage;
 use Magento\Framework\View\Design\Theme\ThemePackageList;
 
 class LockFile
 {
-    private array $modulesConfig;
-    private array $themesConfig;
+    private array $modulesConfig = [];
+    private array $themesConfig = [];
     private array $mergedThemes = [];
     private array $themePaths = [];
 
@@ -24,7 +25,14 @@ class LockFile
     {
     }
 
-
+    /**
+     * Much like the composer.lock or package-lock.json files,
+     * Zermatt's lock file (zermatt-lock.json) contains
+     * configuration for the current install.
+     *
+     * It must be dumped (bin/magento zermatt:lock:dump) after
+     * any change in any zermatt.json file.
+     */
     public function dump(): void
     {
         $this->loadModules();
@@ -36,44 +44,46 @@ class LockFile
     private function loadModules(): void
     {
         $modules = $this->moduleList->getNames();
-        $moduleConfig = [];
-
-        foreach ($modules as $module) {
+        array_walk($modules, function (string $module) {
             $modulePath = $this->componentRegistrar->getPath(ComponentRegistrar::MODULE, $module);
-            $jsonFilePath = $modulePath . '/view/frontend/web/zermatt/zermatt.json';
+            $jsonFilePath = $modulePath . '/view/frontend' . App::JSON_FILEPATH;
             if (file_exists($jsonFilePath)) {
-                $content = file_get_contents($jsonFilePath);
-                $content = str_replace('"./', '"/' . $module. '/zermatt/', $content);
-                $config = json_decode($content, true);
-                $moduleConfig[$module] = $config;
+                $this->loadModuleConfig($jsonFilePath, $module);
             }
-        }
+        });
+    }
 
-        $this->modulesConfig = $moduleConfig;
+    private function loadModuleConfig(string $jsonFilePath, string $module): void
+    {
+        $content = file_get_contents($jsonFilePath);
+        $content = str_replace('"./', '"/' . $module . '/zermatt/', $content);
+        $config = json_decode($content, true);
+        $this->modulesConfig[$module] = $config;
     }
 
     private function loadThemes(): void
     {
-        $config = [];
         $themes = $this->themePackageList->getThemes();
-
-        foreach ($themes as $theme) {
-            $jsonFilePath = $theme->getPath() . '/web/zermatt/zermatt.json';
+        array_walk($themes, function (ThemePackage $theme) {
+            $jsonFilePath = $theme->getPath() . App::JSON_FILEPATH;
             if (file_exists($jsonFilePath)) {
-                $content = file_get_contents($jsonFilePath);
-                $content = str_replace('"./', '"/zermatt/', $content);
-                $this->themePaths[$theme->getKey()] = $theme->getPath();
-                $config[$theme->getKey()] = json_decode($content, true);
+                $this->loadThemeConfig($jsonFilePath, $theme);
             }
-        }
+        });
+    }
 
-        $this->themesConfig = $config;
+    private function loadThemeConfig(string $jsonFilePath, ThemePackage $theme): void
+    {
+        $content = file_get_contents($jsonFilePath);
+        $content = str_replace('"./', '"/zermatt/', $content);
+        $this->themePaths[$theme->getKey()] = $theme->getPath();
+        $this->themesConfig[$theme->getKey()] = json_decode($content, true);
     }
 
     private function addModulesToThemes(): void
     {
         foreach ($this->themesConfig as $theme => $themeConfig) {
-            foreach ($this->modulesConfig as $module => $moduleConfig) {
+            foreach ($this->modulesConfig as $moduleConfig) {
                 foreach (['modules', 'rewrites'] as $section) {
                     $themeConfig[$section] = array_merge($moduleConfig[$section] ?? [], $themeConfig[$section] ?? []);
                 }
@@ -85,24 +95,30 @@ class LockFile
     private function writeFiles(): void
     {
         array_walk($this->mergedThemes, function ($themeConfig, $theme) {
-
-            $finalConfig = [];
-            foreach ($themeConfig as $section => $configs) {
-                $newConfigs = [];
-                foreach ($configs as $key => $value) {
-                    $config = [
-                        'name' => $key,
-                        'path' => $value
-                    ];
-                    $newConfigs[] = $config;
-                }
-                $finalConfig[$section] = $newConfigs;
-            }
-
-            $filePath = $this->themePaths[$theme] . '/web/zermatt/zermatt-lock.json';
-            file_put_contents($filePath, json_encode($finalConfig, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+            $lockData = $this->prepareLockDataForTheme($themeConfig);
+            $this->writeToFile($lockData, $theme);
         });
     }
 
+    private function prepareLockDataForTheme(array $themeConfig): array
+    {
+        $lockData = [];
+        foreach ($themeConfig as $section => $configs) {
+            $lockData[$section] = $this->convertConfigsForLock($configs);
+        }
+        return $lockData;
+    }
 
+    private function convertConfigsForLock(array $configs): array
+    {
+        return array_map(function ($key, $value) {
+            return ['name' => $key, 'path' => $value];
+        }, array_keys($configs), $configs);
+    }
+
+    private function writeToFile(array $lockData, string $theme): void
+    {
+        $filePath = $this->themePaths[$theme] . App::LOCK_FILEPATH;
+        file_put_contents($filePath, json_encode($lockData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+    }
 }

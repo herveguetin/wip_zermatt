@@ -24,9 +24,6 @@ class Install extends Command
         parent::__construct($name);
     }
 
-    /**
-     * Initialization of the command.
-     */
     protected function configure()
     {
         $this->setName('zermatt:install');

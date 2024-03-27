@@ -35,12 +35,17 @@ class Config implements ArgumentInterface
         return $key ? $config[$key] : $config;
     }
 
+    /**
+     * These variables are available on the frontend,
+     * in the Zermatt.Variables object.
+     */
     protected function _get(): array
     {
         return [
             'baseUrl' => $this->url->getUrl('/'),
             'viewUrl' => $this->emptyBlock->getViewFileUrl('/'),
             'translationUrl' => $this->emptyBlock->getViewFileUrl('/js-translation.json'),
+            'formKeyUrl' => $this->url->getUrl('zermatt/formRules/formKey'),
             'locale' => $this->locale->getLocale(),
             'currency' => [
                 'code' => $this->storeManager->getStore()->getCurrentCurrencyCode(),

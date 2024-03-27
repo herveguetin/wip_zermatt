@@ -3,6 +3,7 @@
     <body>
         <referenceContainer name="before.body.end">
             <container name="zermatt.variables">
+                <!-- Using layout for declaring variables allows much flexiblity to choose on which page(s) to add which variable(s). -->
                 <block name="zermatt.variables.config" template="Maddlen_Zermatt::variables/config.phtml">
                     <arguments>
                         <argument name="config" xsi:type="object">Maddlen\Zermatt\App\Config</argument>

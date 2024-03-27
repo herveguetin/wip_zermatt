@@ -6,25 +6,27 @@
 use Magento\Framework\View\Element\Template; ?>
 <?php
 /** @var Template $block */
-preg_match('/value="([^"]+)"/', $block->getBlockHtml('formkey'), $formKey);
 $xData = [
     'name' => '',
-    'email' => '',
-    'form_key' => $formKey[1]
+    'email' => ''
 ]
 ?>
 <form
     x-ref="form"
-    action="<?= $block->getUrl('zermatt/examples/form') ?>"
+    action="<?= $block->getUrl('zermatt_examples/form') ?>"
     x-data='<?= json_encode($xData) ?>'
 >
     <div x-data="zermatt_form" x-cloak>
-        <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
-        <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'name']) ?>
+        <template x-if="form">
+            <div>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'name']) ?>
 
-        <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Email'), 'id' => 'email', 'name' => 'email']) ?>
-        <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'email']) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Email'), 'id' => 'email', 'name' => 'email']) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'email']) ?>
 
-        <?php zermatt_component('Maddlen_ZermattExamples::components/form/button.phtml', ['label' => __('Submit')]) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/button.phtml', ['label' => __('Submit')]) ?>
+            </div>
+        </template>
     </div>
 </form>

@@ -19,7 +19,7 @@ class Component
             'props' => $props
         ];
 
-        echo $id;
+        echo $id; // Yes, echo the component id in the HTML
         return $id;
     }
 
