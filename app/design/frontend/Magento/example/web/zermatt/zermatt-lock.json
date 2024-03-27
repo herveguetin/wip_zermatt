@@ -1,22 +1,22 @@
 {
-    "modules": [
-        {
-            "name": "welcome",
-            "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome"
-        },
-        {
-            "name": "translation",
-            "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
-        },
-        {
-            "name": "zermatt_form",
-            "path": "/Maddlen_Zermatt/zermatt/form/index"
-        }
-    ],
-    "rewrites": [
-        {
-            "name": "welcome",
-            "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome-rewrite"
-        }
-    ]
+  "modules": [
+    {
+      "name": "welcome",
+      "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome"
+    },
+    {
+      "name": "translation",
+      "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
+    },
+    {
+      "name": "zermatt_form",
+      "path": "/Maddlen_Zermatt/zermatt/form/index"
+    }
+  ],
+  "rewrites": [
+    {
+      "name": "welcome",
+      "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome-rewrite"
+    }
+  ]
 }
