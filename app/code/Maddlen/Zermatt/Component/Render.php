@@ -21,7 +21,7 @@ class Render
     public function output(string $html): string
     {
         $components = Component::all();
-        array_walk($components, function ($component) use (&$html) {
+        array_walk($components, function (array $component) use (&$html): void {
             $html = str_replace($component['id'], $this->render($component), $html);
         });
 
@@ -32,9 +32,8 @@ class Render
         return $html;
     }
 
-    public function render($component): string
+    public function render(array $component): string
     {
-        /** @var Template $block */
         $this->templateBlock = $this->templateFactory->create();
         $this->templateBlock->setTemplate($component['template']);
         array_walk($component['props'], fn($value, $key) => $this->templateBlock->setData($key, $value));

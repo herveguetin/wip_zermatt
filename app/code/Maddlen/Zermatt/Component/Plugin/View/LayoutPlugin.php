@@ -16,11 +16,6 @@ class LayoutPlugin
     {
     }
 
-    /**
-     * @param Layout $subject
-     * @param string $result
-     * @return string
-     */
     public function afterGetOutput(Layout $subject, string $result): string
     {
         return $this->componentRender->output($result);

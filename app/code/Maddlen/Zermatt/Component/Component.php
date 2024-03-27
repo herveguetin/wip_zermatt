@@ -7,7 +7,8 @@ namespace Maddlen\Zermatt\Component;
 
 class Component
 {
-    const PLACEHOLDER = 'zermatt_component:';
+    final public const PLACEHOLDER = 'zermatt_component:';
+
     protected static array $components = [];
 
     public static function add(string $template, mixed $props): string

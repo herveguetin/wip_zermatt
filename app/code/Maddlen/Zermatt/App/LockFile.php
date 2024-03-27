@@ -13,8 +13,11 @@ use Magento\Framework\View\Design\Theme\ThemePackageList;
 class LockFile
 {
     private array $modulesConfig = [];
+
     private array $themesConfig = [];
+
     private array $mergedThemes = [];
+
     private array $themePaths = [];
 
     public function __construct(
@@ -44,7 +47,7 @@ class LockFile
     private function loadModules(): void
     {
         $modules = $this->moduleList->getNames();
-        array_walk($modules, function (string $module) {
+        array_walk($modules, function (string $module): void {
             $modulePath = $this->componentRegistrar->getPath(ComponentRegistrar::MODULE, $module);
             $jsonFilePath = $modulePath . '/view/frontend' . App::JSON_FILEPATH;
             if (file_exists($jsonFilePath)) {
@@ -57,14 +60,15 @@ class LockFile
     {
         $content = file_get_contents($jsonFilePath);
         $content = str_replace('"./', '"/' . $module . '/zermatt/', $content);
-        $config = json_decode($content, true);
+
+        $config = json_decode($content, true, 512, JSON_THROW_ON_ERROR);
         $this->modulesConfig[$module] = $config;
     }
 
     private function loadThemes(): void
     {
         $themes = $this->themePackageList->getThemes();
-        array_walk($themes, function (ThemePackage $theme) {
+        array_walk($themes, function (ThemePackage $theme): void {
             $jsonFilePath = $theme->getPath() . App::JSON_FILEPATH;
             if (file_exists($jsonFilePath)) {
                 $this->loadThemeConfig($jsonFilePath, $theme);
@@ -77,7 +81,7 @@ class LockFile
         $content = file_get_contents($jsonFilePath);
         $content = str_replace('"./', '"/zermatt/', $content);
         $this->themePaths[$theme->getKey()] = $theme->getPath();
-        $this->themesConfig[$theme->getKey()] = json_decode($content, true);
+        $this->themesConfig[$theme->getKey()] = json_decode($content, true, 512, JSON_THROW_ON_ERROR);
     }
 
     private function addModulesToThemes(): void
@@ -88,13 +92,14 @@ class LockFile
                     $themeConfig[$section] = array_merge($moduleConfig[$section] ?? [], $themeConfig[$section] ?? []);
                 }
             }
+
             $this->mergedThemes[$theme] = $themeConfig;
         }
     }
 
     private function writeFiles(): void
     {
-        array_walk($this->mergedThemes, function ($themeConfig, $theme) {
+        array_walk($this->mergedThemes, function ($themeConfig, $theme): void {
             $lockData = $this->prepareLockDataForTheme($themeConfig);
             $this->writeToFile($lockData, $theme);
         });
@@ -106,14 +111,13 @@ class LockFile
         foreach ($themeConfig as $section => $configs) {
             $lockData[$section] = $this->convertConfigsForLock($configs);
         }
+
         return $lockData;
     }
 
     private function convertConfigsForLock(array $configs): array
     {
-        return array_map(function ($key, $value) {
-            return ['name' => $key, 'path' => $value];
-        }, array_keys($configs), $configs);
+        return array_map(static fn($key, $value): array => ['name' => $key, 'path' => $value], array_keys($configs), $configs);
     }
 
     private function writeToFile(array $lockData, string $theme): void

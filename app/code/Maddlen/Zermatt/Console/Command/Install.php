@@ -13,7 +13,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Install extends Command
 {
-    const TARGET_THEME_CODE = 'targetThemeCode';
+    final public const TARGET_THEME_CODE = 'targetThemeCode';
+
     private OutputInterface $output;
 
     public function __construct(
@@ -38,9 +39,9 @@ class Install extends Command
         $this->install->install($input->getArgument(self::TARGET_THEME_CODE));
 
         $this->messages([
-            "<info>Zermatt was successfully installed in {$this->install->getTargetThemeDir(false)}</info>",
+            sprintf('<info>Zermatt was successfully installed in %s</info>', $this->install->getTargetThemeDir(false)),
             "<comment>Go to this new directory and run `npm install`.</comment>",
-            "<comment>Ex: `cd {$this->install->getTargetThemeDir()} && npm install`</comment>",
+            sprintf('<comment>Ex: `cd %s && npm install`</comment>', $this->install->getTargetThemeDir()),
         ]);
 
         return Command::SUCCESS;

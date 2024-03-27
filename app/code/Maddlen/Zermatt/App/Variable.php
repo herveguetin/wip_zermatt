@@ -21,8 +21,9 @@ class Variable
         }
 
         if ($value instanceof DataObject || $value instanceof Collection) {
-            $value = (new Escaper())->escapeJs(json_encode($value->toArray()));
+            $value = (new Escaper())->escapeJs(json_encode($value->toArray(), JSON_THROW_ON_ERROR));
         }
+
         static::$variables[$name] = $value;
     }
 

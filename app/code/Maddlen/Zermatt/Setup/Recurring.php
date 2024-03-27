@@ -19,7 +19,7 @@ class Recurring implements InstallSchemaInterface
     }
 
 
-    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context): void
     {
         $this->lockFile->dump();
     }

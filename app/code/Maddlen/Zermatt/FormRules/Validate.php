@@ -13,6 +13,7 @@ use Magento\Framework\Validator\ValidatorInterface;
 class Validate
 {
     private array $rules;
+
     private array $invalidParams = [];
 
     public function __construct(
@@ -24,7 +25,7 @@ class Validate
 
     public function request(array $rules = []): void
     {
-        $requestParams = $this->request->isAjax() ? json_decode($this->request->getContent(), true) : $this->request->getParams();
+        $requestParams = $this->request->isAjax() ? json_decode((string) $this->request->getContent(), true, 512, JSON_THROW_ON_ERROR) : $this->request->getParams();
         $this->request->setParams($requestParams);
         $this->invalidParams = [];
         if (!$this->formKeyValidator->validate($this->request)) {
@@ -37,13 +38,13 @@ class Validate
 
     private function validateParams(mixed $requestParams, array $rules): void
     {
-        $paramsToValidate = array_filter($requestParams, fn($v, $param) => in_array($param, array_keys($rules)), ARRAY_FILTER_USE_BOTH);
+        $paramsToValidate = array_filter($requestParams, static fn($v, $param): bool => in_array($param, array_keys($rules)), ARRAY_FILTER_USE_BOTH);
         array_walk($paramsToValidate, fn($value, $param) => $this->validateParam($param, $value));
     }
 
-    private function validateParam($param, $value): void
+    private function validateParam(int|string $param, $value): void
     {
-        array_walk($this->rules[$param], function ($validatorClass) use ($param, $value) {
+        array_walk($this->rules[$param], function ($validatorClass) use ($param, $value): void {
             $validator = $this->getValidator($validatorClass);
             $isPrecognition = $this->request->getHeader('Precognition');
             $isValid = $validator->isValid($value);
@@ -63,6 +64,7 @@ class Validate
         if (!$validator instanceof ValidatorInterface) {
             throw new InvalidArgumentException('Rule class must implement \Laminas\Validator\ValidatorInterface');
         }
+
         return $validator;
     }
 
@@ -84,6 +86,6 @@ class Validate
 
     public function pass(): bool
     {
-        return !count($this->invalidParams);
+        return $this->invalidParams === [];
     }
 }

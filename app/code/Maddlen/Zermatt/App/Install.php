@@ -30,6 +30,7 @@ class Install
         $this->setTargetThemeCode($targetThemeCode);
         $filesystem = new \Symfony\Component\Filesystem\Filesystem();
         $filesystem->mirror($this->app->sourceDir(), $this->getTargetThemeDir());
+
         $this->lockFile->dump();
         return $this;
     }
@@ -48,9 +49,10 @@ class Install
 
     public function getTargetTheme(): Theme
     {
-        if (!$this->targetThemeCode) {
+        if ($this->targetThemeCode === '' || $this->targetThemeCode === '0') {
             throw new Exception('Please set a target theme code.');
         }
+
         return $this->themeList->getThemeByFullPath('frontend/' . $this->targetThemeCode);
     }
 

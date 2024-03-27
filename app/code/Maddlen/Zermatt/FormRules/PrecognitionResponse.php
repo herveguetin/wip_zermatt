@@ -19,13 +19,14 @@ class PrecognitionResponse
     }
 
 
-    public function send(): void
+    public function send(): never
     {
         $result = $this->resultFactory->create(ResultFactory::TYPE_JSON);
         $result->setData($this->validate->results());
         $result->setHttpResponseCode($this->validate->pass() ? 200 : 422);
         $result->setHeader('Precognition', 'true');
         $result->renderResult($this->response);
+
         $this->response->sendResponse();
         exit;
     }

@@ -29,6 +29,7 @@ class ActionPlugin
                 $this->precognitionResponse->send();
             }
         }
+
         return [];
     }
 }

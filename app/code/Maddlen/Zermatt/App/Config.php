@@ -15,7 +15,7 @@ use Magento\Store\Model\StoreManager;
 
 class Config implements ArgumentInterface
 {
-    private Text $emptyBlock;
+    private readonly Text $emptyBlock;
 
     public function __construct(
         protected readonly UrlInterface $url,
@@ -32,7 +32,7 @@ class Config implements ArgumentInterface
     {
         $config = $this->_get();
         array_walk($config, fn(&$value) => $value = is_string($value) ? $this->escaper->escapeJs($value) : $value);
-        return $key ? $config[$key] : $config;
+        return $key !== null && $key !== '' ? $config[$key] : $config;
     }
 
     /**
