@@ -6,5 +6,5 @@
 /** @var \Magento\Framework\View\Element\Template $block */
 ?>
 <template x-if="form.invalid('<?= $block->getData('target') ?>')">
-    <div x-text="form.errors.<?= $block->getData('target') ?>"></div>
+    <div x-text="form.errors.<?= $block->getData('target') ?>" class="mage-error"></div>
 </template>

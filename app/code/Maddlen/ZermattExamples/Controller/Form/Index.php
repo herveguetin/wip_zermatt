@@ -36,7 +36,7 @@ class Index implements FormRulesActionInterface, HttpPostActionInterface
             $this->messageManager->addErrorMessage(__('Form is invalid.'));
         }
         return $this->resultFactory->create(ResultFactory::TYPE_JSON)
-            ->setData(['redirect' => $this->url->getUrl('zermatt/examples')]);
+            ->setData(['redirect' => $this->url->getUrl('zermatt_examples')]);
     }
 
     public function rules(): array
