@@ -1,6 +1,4 @@
 {
-  "modules": {
-    "zermatt_form": "./form/index"
-  },
+  "modules": {},
   "rewrites": {}
 }

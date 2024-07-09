@@ -7,10 +7,6 @@
     {
       "name": "translation",
       "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
-    },
-    {
-      "name": "zermatt_form",
-      "path": "/Maddlen_Zermatt/zermatt/form/index"
     }
   ],
   "rewrites": [
