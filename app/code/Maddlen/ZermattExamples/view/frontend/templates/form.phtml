@@ -7,30 +7,19 @@ use Magento\Framework\View\Element\Template; ?>
 <?php
 /** @var Template $block */
 ?>
-<div x-data="Zermatt.Form({name: '', email: ''})" x-cloak>
+<?php
+$nameField = 'name';
+$emailField = 'email';
+?>
+<div x-data="Zermatt.Form({<?= $nameField ?>: '', <?= $emailField ?>: ''})" x-cloak>
     <form action="<?= $block->getUrl('zermatt_examples/form') ?>">
         <template x-if="form">
             <div>
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'name']) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'random_id', 'name' => $nameField]) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => $nameField]) ?>
 
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Email'), 'id' => 'email', 'name' => 'email']) ?>
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'email']) ?>
-
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/button.phtml', ['label' => __('Submit')]) ?>
-            </div>
-        </template>
-    </form>
-</div>
-<div x-data="Zermatt.Form({name: '', email: ''})" x-cloak>
-    <form action="<?= $block->getUrl('zermatt_examples/form') ?>">
-        <template x-if="form">
-            <div>
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'name']) ?>
-
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Email'), 'id' => 'email', 'name' => 'email']) ?>
-                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => 'email']) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Email'), 'id' => 'another_random_id', 'name' => $emailField]) ?>
+                <?php zermatt_component('Maddlen_ZermattExamples::components/form/error.phtml', ['target' => $emailField]) ?>
 
                 <?php zermatt_component('Maddlen_ZermattExamples::components/form/button.phtml', ['label' => __('Submit')]) ?>
             </div>
