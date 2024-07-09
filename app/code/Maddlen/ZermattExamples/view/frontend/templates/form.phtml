@@ -6,13 +6,9 @@
 use Magento\Framework\View\Element\Template; ?>
 <?php
 /** @var Template $block */
-$xData = [
-    'name' => '',
-    'email' => ''
-]
 ?>
-<div x-data="Zermatt.Form()" x-cloak>
-    <form x-data='<?= json_encode($xData) ?>' action="<?= $block->getUrl('zermatt_examples/form') ?>">
+<div x-data="Zermatt.Form({name: '', email: ''})" x-cloak>
+    <form action="<?= $block->getUrl('zermatt_examples/form') ?>">
         <template x-if="form">
             <div>
                 <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
@@ -26,8 +22,8 @@ $xData = [
         </template>
     </form>
 </div>
-<div x-data="Zermatt.Form()" x-cloak>
-    <form x-data='<?= json_encode($xData) ?>' action="<?= $block->getUrl('zermatt_examples/form') ?>">
+<div x-data="Zermatt.Form({name: '', email: ''})" x-cloak>
+    <form action="<?= $block->getUrl('zermatt_examples/form') ?>">
         <template x-if="form">
             <div>
                 <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>

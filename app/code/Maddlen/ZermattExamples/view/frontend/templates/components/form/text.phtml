@@ -10,5 +10,6 @@
     id="<?= $block->getData('id') ?>"
     name="<?= $block->getData('name') ?>"
     x-model="form.<?= $block->getData('name') ?>"
-    @change="form.validate('<?= $block->getData('name') ?>')"
+    @change="validate('<?= $block->getData('name') ?>')"
 />
+<div x-text="form.<?= $block->getData('name') ?>"></div>
