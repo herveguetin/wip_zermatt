@@ -7,9 +7,10 @@ export default {
     form: null,
     async init() {
         this.fetchFormKey().then(formKey => {
-            let formData = JSON.parse(this.$refs.form.getAttribute('x-data'))
+            const form = this.$el.querySelector('form')
+            let formData = JSON.parse(form.getAttribute('x-data'))
             formData.form_key = formKey
-            this.form = this.$form('post', this.$refs.form.getAttribute('action'), formData)
+            this.form = this.$form('post', form.getAttribute('action'), formData)
         })
     },
     async fetchFormKey() {
@@ -22,10 +23,11 @@ export default {
     },
     submit() {
         this.submitted = true
+        let form = this.$el.querySelector('form')
         this.form.submit()
             .then(response => {
                 this.form.reset()
-                this.$refs.form.reset()
+                form.reset()
                 this.success = true
                 this.submitted = false
                 this.onSuccess(response)
@@ -33,7 +35,7 @@ export default {
                     this.success = false
                 }, 4500)
             })
-            .then(this.$refs.form.scrollIntoView())
+            .then(() => form.scrollIntoView())
             .catch(error => {
                 console.log('Form has errors and was not submitted.')
             })

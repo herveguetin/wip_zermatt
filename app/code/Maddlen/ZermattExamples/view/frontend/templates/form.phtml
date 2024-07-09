@@ -11,12 +11,8 @@ $xData = [
     'email' => ''
 ]
 ?>
-<form
-    x-ref="form"
-    action="<?= $block->getUrl('zermatt_examples/form') ?>"
-    x-data='<?= json_encode($xData) ?>'
->
-    <div x-data="zermatt_form" x-cloak>
+<div x-data="zermatt_form" x-cloak>
+    <form x-data='<?= json_encode($xData) ?>' action="<?= $block->getUrl('zermatt_examples/form') ?>">
         <template x-if="form">
             <div>
                 <?php zermatt_component('Maddlen_ZermattExamples::components/form/text.phtml', ['label' => __('Name'), 'id' => 'name', 'name' => 'name']) ?>
@@ -28,5 +24,5 @@ $xData = [
                 <?php zermatt_component('Maddlen_ZermattExamples::components/form/button.phtml', ['label' => __('Submit')]) ?>
             </div>
         </template>
-    </div>
-</form>
+    </form>
+</div>
