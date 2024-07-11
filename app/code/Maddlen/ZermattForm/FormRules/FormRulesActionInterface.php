@@ -3,19 +3,22 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\FormRules;
+namespace Maddlen\ZermattForm\FormRules;
 
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Validator\ValidatorInterface;
 
-interface FormRulesActionInterface
+interface FormRulesActionInterface extends HttpPostActionInterface
 {
     /**
      * The validations to run against some
      * fields from the request payload.
      *
+     * @return ValidatorInterface[]
      * @see /vendor/magento/framework/Validator
      *
-     * @return ValidatorInterface[]
      */
     public function rules(): array;
+
+    public function redirectUrl(): string;
 }

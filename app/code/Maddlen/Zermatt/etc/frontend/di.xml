@@ -4,8 +4,4 @@
         <plugin name="zermatt_component_layout_plugin"
                 type="Maddlen\Zermatt\Component\Plugin\View\LayoutPlugin"/>
     </type>
-    <type name="Magento\Framework\App\ActionInterface">
-        <plugin name="zermatt_formrules_app_action_plugin"
-                type="Maddlen\Zermatt\FormRules\Plugin\Framework\App\ActionPlugin"/>
-    </type>
 </config>

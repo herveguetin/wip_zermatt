@@ -3,7 +3,7 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\FormRules;
+namespace Maddlen\ZermattForm\FormRules;
 
 use InvalidArgumentException;
 use Magento\Framework\App\RequestInterface;

@@ -45,7 +45,6 @@ class Config implements ArgumentInterface
             'baseUrl' => $this->url->getUrl('/'),
             'viewUrl' => $this->emptyBlock->getViewFileUrl('/'),
             'translationUrl' => $this->emptyBlock->getViewFileUrl('/js-translation.json'),
-            'formKeyUrl' => $this->url->getUrl('zermatt/formRules/formKey'),
             'locale' => $this->locale->getLocale(),
             'currency' => [
                 'code' => $this->storeManager->getStore()->getCurrentCurrencyCode(),

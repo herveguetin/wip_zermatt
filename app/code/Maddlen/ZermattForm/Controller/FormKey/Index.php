@@ -3,7 +3,7 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\Controller\FormRules;
+namespace Maddlen\ZermattForm\Controller\FormKey;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\CsrfAwareActionInterface;
@@ -11,12 +11,13 @@ use Magento\Framework\App\Request\InvalidRequestException;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\Data\Form\FormKey;
 
-class FormKey implements HttpPostActionInterface, CsrfAwareActionInterface
+class Index implements HttpPostActionInterface, CsrfAwareActionInterface
 {
     public function __construct(
-        protected readonly ResultFactory                        $resultFactory,
-        protected readonly \Magento\Framework\Data\Form\FormKey $formKey
+        protected ResultFactory $resultFactory,
+        protected FormKey       $formKey
     )
     {
     }

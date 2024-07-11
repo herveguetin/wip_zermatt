@@ -1,6 +1,7 @@
 export default {
+    customerName: '',
     message: 'Welcome',
     greet() {
-        return this.message + ' my friend!'
+        return `${this.message} ${this.customerName}!`
     }
 }

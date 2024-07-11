@@ -11,7 +11,8 @@ use Magento\Framework\View\Element\Template; ?>
 $nameField = 'name';
 $emailField = 'email';
 ?>
-<div x-data="Zermatt.Form({<?= $nameField ?>: '', <?= $emailField ?>: ''})" x-cloak>
+<h2>Form</h2>
+<div x-data="Zermatt.Module('form', {formData: {<?= $nameField ?>: '', <?= $emailField ?>: ''}})" x-cloak>
     <form action="<?= $block->getUrl('zermatt_examples/form') ?>">
         <template x-if="form">
             <div>

@@ -9,6 +9,6 @@ use Magento\Framework\View\Element\Template; ?>
 ?>
 <h2>Translation</h2>
 <div x-data="{}">
-    <div x-data="translation" x-text="message"></div>
+    <div x-data="Zermatt.Module('translation')" x-text="message"></div>
     <div><?= __('Have fun') ?></div>
 </div>

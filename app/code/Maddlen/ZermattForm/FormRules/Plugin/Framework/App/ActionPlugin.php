@@ -3,11 +3,11 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Maddlen\Zermatt\FormRules\Plugin\Framework\App;
+namespace Maddlen\ZermattForm\FormRules\Plugin\Framework\App;
 
-use Maddlen\Zermatt\FormRules\FormRulesActionInterface;
-use Maddlen\Zermatt\FormRules\PrecognitionResponse;
-use Maddlen\Zermatt\FormRules\Validate;
+use Maddlen\ZermattForm\FormRules\FormRulesActionInterface;
+use Maddlen\ZermattForm\FormRules\PrecognitionResponse;
+use Maddlen\ZermattForm\FormRules\Validate;
 use Magento\Framework\App\ActionInterface;
 use Magento\Framework\App\Request\Http;
 
