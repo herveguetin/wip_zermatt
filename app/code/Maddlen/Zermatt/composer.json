@@ -1,5 +1,5 @@
 {
-    "name": "maddlen/zermatt",
+    "name": "maddlen/module-zermatt",
     "version": "1.0.0",
     "description": "AlpineJS in Magento.",
     "type": "magento2-module",
