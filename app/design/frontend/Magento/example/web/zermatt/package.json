@@ -1,28 +1,21 @@
 {
   "name": "zermatt",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .js"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^5.1.6"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.14.1",
-    "@alpinejs/focus": "^3.14.1",
-    "@alpinejs/morph": "^3.14.1",
-    "@alpinejs/persist": "^3.14.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "i18next": "^23.10.1",
     "laravel-precognition-alpine": "^0.5.4",
     "prettier": "^3.2.5",
-    "zermatt-core": "github:maddlen/zermatt-core"
+    "zermatt-core": "^1.0.0"
   }
 }

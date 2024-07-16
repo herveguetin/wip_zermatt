@@ -1,6 +1,0 @@
-{
-  "modules": {
-    "form": "./modules/form"
-  },
-  "rewrites": {}
-}

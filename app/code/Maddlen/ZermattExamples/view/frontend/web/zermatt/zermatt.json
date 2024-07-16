@@ -1,9 +1,0 @@
-{
-  "modules": {
-    "welcome": "./modules/welcome",
-    "translation": "./modules/translation"
-  },
-  "rewrites": {
-    "welcome": "./modules/welcome-rewrite"
-  }
-}
