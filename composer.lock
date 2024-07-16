@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05b95001e03b74fcfe72321278560811",
+    "content-hash": "7e5c8bd8f98d393ac024f107b27d3f05",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -4932,6 +4932,81 @@
                 }
             ],
             "time": "2024-01-28T23:22:08+00:00"
+        },
+        {
+            "name": "maddlen/module-zermatt",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maddlen/zermatt.git",
+                "reference": "8e79f972d555edbd35e1f1041551f670a54a70fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maddlen/zermatt/zipball/8e79f972d555edbd35e1f1041551f670a54a70fe",
+                "reference": "8e79f972d555edbd35e1f1041551f670a54a70fe",
+                "shasum": ""
+            },
+            "require": {
+                "maddlen/module-zermatt-form": "1.0.0",
+                "magento/framework": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Maddlen\\Zermatt\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "AlpineJS in Magento.",
+            "support": {
+                "issues": "https://github.com/maddlen/zermatt/issues",
+                "source": "https://github.com/maddlen/zermatt/tree/1.0.0"
+            },
+            "time": "2024-07-16T16:46:25+00:00"
+        },
+        {
+            "name": "maddlen/module-zermatt-form",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maddlen/zermatt-form.git",
+                "reference": "968d94b382bca9f43e6970e4bf400e23a6c91421"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maddlen/zermatt-form/zipball/968d94b382bca9f43e6970e4bf400e23a6c91421",
+                "reference": "968d94b382bca9f43e6970e4bf400e23a6c91421",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Maddlen\\ZermattForm\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A precognitive form implementation for Zermatt.",
+            "support": {
+                "issues": "https://github.com/maddlen/zermatt-form/issues",
+                "source": "https://github.com/maddlen/zermatt-form/tree/1.0.0"
+            },
+            "time": "2024-07-16T15:10:41+00:00"
         },
         {
             "name": "magento/adobe-stock-integration",

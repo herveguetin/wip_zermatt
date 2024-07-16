@@ -1,0 +1,9 @@
+{
+    "modules": [
+        {
+            "name": "form",
+            "path": "/Maddlen_ZermattForm/zermatt/modules/form"
+        }
+    ],
+    "rewrites": []
+}
