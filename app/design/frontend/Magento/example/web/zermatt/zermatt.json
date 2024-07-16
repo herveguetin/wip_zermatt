@@ -1,4 +1,6 @@
 {
-  "modules": {},
+  "modules": {
+    "welcome": "./modules/welcome"
+  },
   "rewrites": {}
 }

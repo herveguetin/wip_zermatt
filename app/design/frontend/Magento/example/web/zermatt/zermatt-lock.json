@@ -3,6 +3,10 @@
         {
             "name": "form",
             "path": "/Maddlen_ZermattForm/zermatt/modules/form"
+        },
+        {
+            "name": "welcome",
+            "path": "/zermatt/modules/welcome"
         }
     ],
     "rewrites": []
