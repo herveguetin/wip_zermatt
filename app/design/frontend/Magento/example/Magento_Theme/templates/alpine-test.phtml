@@ -11,6 +11,10 @@ zermatt_variable('customers', [
     ['code' => 'emily', 'name' => 'Emily Johnson', 'message' => __('Welcome ')],
 ]);
 ?>
-<div x-data="Zermatt.Module('welcome')">
+<div x-data="Zermatt.Module('alpineTest')">
     <span x-text="greet('emily')"></span>
+</div>
+
+<div x-data="Zermatt.Module('welcome')">
+    <div x-text="message"></div>
 </div>

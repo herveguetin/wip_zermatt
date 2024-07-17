@@ -1,6 +1,6 @@
 {
   "modules": {
-    "welcome": "./modules/welcome"
+    "alpineTest": "./modules/alpine-test"
   },
   "rewrites": {}
 }

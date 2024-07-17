@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e5c8bd8f98d393ac024f107b27d3f05",
+    "content-hash": "9be3eecb1ec738d071f93ea6e215d534",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -4970,6 +4970,44 @@
                 "source": "https://github.com/maddlen/zermatt/tree/1.0.0"
             },
             "time": "2024-07-16T16:46:25+00:00"
+        },
+        {
+            "name": "maddlen/module-zermatt-examples",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maddlen/zermatt-examples.git",
+                "reference": "c24c7949b0b868fe51c82245b284a090a5ad6832"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maddlen/zermatt-examples/zipball/c24c7949b0b868fe51c82245b284a090a5ad6832",
+                "reference": "c24c7949b0b868fe51c82245b284a090a5ad6832",
+                "shasum": ""
+            },
+            "require": {
+                "maddlen/module-zermatt": "1.0.*",
+                "magento/framework": "*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Maddlen\\ZermattExamples\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Examples of Zermatt usage.",
+            "support": {
+                "issues": "https://github.com/maddlen/zermatt-examples/issues",
+                "source": "https://github.com/maddlen/zermatt-examples/tree/1.0.0"
+            },
+            "time": "2024-07-16T18:17:28+00:00"
         },
         {
             "name": "maddlen/module-zermatt-form",
