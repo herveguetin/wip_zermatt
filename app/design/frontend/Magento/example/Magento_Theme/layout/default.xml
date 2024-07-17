@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main.content">
+            <block name="alpine_test" template="Magento_Theme::alpine-test.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

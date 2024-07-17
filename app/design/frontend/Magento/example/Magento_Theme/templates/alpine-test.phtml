@@ -1,0 +1,16 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<?php
+zermatt_variable('customers', [
+    ['code' => 'john', 'name' => 'John Doe', 'message' => __('Hello ')],
+    ['code' => 'emily', 'name' => 'Emily Johnson', 'message' => __('Welcome ')],
+]);
+?>
+<div x-data="Zermatt.Module('welcome')">
+    <span x-text="greet('emily')"></span>
+</div>
