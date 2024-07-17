@@ -1,5 +1,5 @@
 # Getting started
-## Requirements
+
 ## Installation
 ### Module install
 Install the Zermatt Magento module.
@@ -76,7 +76,7 @@ zermatt_variable('customers', [
 
 Please note that:
 
-- The `zermatt_variable()` backend method is used to declare a `customers` frontend variable...
+- The `zermatt_variable()` PHP method is used to declare a `customers` variable...
 - ... which is then available in Javascript by calling `Zermatt.Variables.<variable>`...
 - ... so `Zermatt.Variables.customers`
 
@@ -141,8 +141,8 @@ From now on:
 - The Zermatt module can easily be distributed.
 - The AlpineJS component is fully integrated within the ViteJS install that Zermatt uses.
 - It is then possible to `ìmport` modules from the AlpineJS and Javascript ecosystems.
-- The component is loaded (and its .js file requested) only if the current page uses it.
-- The component is loaded only once. A factory creates a new instance each time the PHTML calls it.
+- The module is loaded (and its .js file requested) only if the current page uses it.
+- The module is loaded only once. A factory creates a new instance each time the PHTML calls it.
 
 [Learn more about Zermatt modules](#modules)
 
