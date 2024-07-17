@@ -1,6 +1,10 @@
 {
     "modules": [
         {
+            "name": "customerWelcome",
+            "path": "/Zermatt_Doc/zermatt/customer-welcome"
+        },
+        {
             "name": "welcome",
             "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome"
         },
