@@ -1,19 +1,19 @@
 {
     "modules": [
         {
-            "name": "customerWelcome",
-            "path": "/Zermatt_Doc/zermatt/customer-welcome"
+            "name": "SandBox_CustomerWelcome",
+            "path": "/Sand_Box/zermatt/customer-welcome"
         },
         {
-            "name": "welcome",
+            "name": "ZermattExamples_Welcome",
             "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome"
         },
         {
-            "name": "translation",
+            "name": "ZermattExamples_Translation",
             "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
         },
         {
-            "name": "form",
+            "name": "Zermatt_Form",
             "path": "/Maddlen_ZermattForm/zermatt/modules/form"
         },
         {
@@ -23,7 +23,7 @@
     ],
     "rewrites": [
         {
-            "name": "welcome",
+            "name": "ZermattExamples_Welcome",
             "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome-rewrite"
         }
     ]

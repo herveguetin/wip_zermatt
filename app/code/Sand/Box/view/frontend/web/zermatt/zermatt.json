@@ -1,0 +1,5 @@
+{
+  "modules": {
+    "SandBox_CustomerWelcome": "./customer-welcome"
+  }
+}

@@ -3,7 +3,7 @@
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
  */
 
-namespace Zermatt\Doc\Block;
+namespace Sand\Box\Block;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Framework\View\Element\Context;

@@ -5,4 +5,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Zermatt_Doc', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Sand_Box', __DIR__);
