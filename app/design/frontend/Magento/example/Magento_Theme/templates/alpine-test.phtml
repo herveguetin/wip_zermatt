@@ -6,15 +6,7 @@
 /** @var \Magento\Framework\View\Element\Template $block */
 ?>
 <?php
-zermatt_variable('customers', [
-    ['code' => 'john', 'name' => 'John Doe', 'message' => __('Hello ')],
-    ['code' => 'emily', 'name' => 'Emily Johnson', 'message' => __('Welcome ')],
-]);
 ?>
 <div x-data="Zermatt.Module('alpineTest')">
-    <span x-text="greet('emily')"></span>
-</div>
-
-<div x-data="Zermatt.Module('ZermattExamples_Welcome')">
-    <div x-text="message"></div>
+    <span x-text="greet()"></span>
 </div>

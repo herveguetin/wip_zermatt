@@ -6,12 +6,15 @@
 namespace Sand\Box\Block;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
+use Magento\Framework\Data\Collection;
+use Magento\Framework\DataObject;
 use Magento\Framework\View\Element\Context;
 
 class ZermattCustomerData extends \Magento\Framework\View\Element\Text
 {
     public function __construct(
         private CustomerRepositoryInterface $customerRepository,
+        private \Magento\Customer\Model\ResourceModel\Customer\Collection $customerCollection,
         Context                             $context,
         array                               $data = []
     )
@@ -23,7 +26,12 @@ class ZermattCustomerData extends \Magento\Framework\View\Element\Text
 
     public function getText(): string
     {
-        zermatt_variable('customerData', $this->customerData());
+        //$customer = $this->customerRepository->get('john.doe@mail.com');
+        //$customer = new DataObject(["name" => "John Doe", "email" => "john.doe@mail.com"]);
+        //$customers = $this->customerCollection->load();
+        $customers = $this->customerRepository->getList(new \Magento\Framework\Api\SearchCriteria());
+        //$customer = ['name' => 'John Doe', 'email' => 'john.doe@mail.com'];
+        zermatt_variable('customerData', $customers);
         return '';
     }
 

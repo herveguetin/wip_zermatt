@@ -1,0 +1,8 @@
+{
+  "modules": {
+    "alpineTest": "./modules/alpine-test"
+  },
+  "rewrites": {
+    "alpineTest": "./modules/alpine-test-rewrite"
+  }
+}
