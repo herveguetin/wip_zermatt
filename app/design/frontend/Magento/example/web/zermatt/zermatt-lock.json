@@ -9,6 +9,10 @@
             "path": "/Sand_Box/zermatt/modules/price-example"
         },
         {
+            "name": "SandBox_EventExample",
+            "path": "/Sand_Box/zermatt/modules/events"
+        },
+        {
             "name": "ZermattExamples_Welcome",
             "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome"
         },

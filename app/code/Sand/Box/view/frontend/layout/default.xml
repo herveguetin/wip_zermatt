@@ -9,6 +9,7 @@
             <block name="customer_data_view" template="Sand_Box::customer.phtml"/>
             <block name="my_form" template="Sand_Box::form.phtml"/>
             <block name="anchor" template="Sand_Box::anchor.phtml"/>
+            <block name="event" template="Sand_Box::event.phtml"/>
             <block class="Sand\Box\Block\Price" name="sandbox_price" template="Sand_Box::price.phtml"/>
             <block class="Sand\Box\Block\Product" name="sandbox_partial" template="Sand_Box::product-thumbnail.phtml"/>
         </referenceContainer>

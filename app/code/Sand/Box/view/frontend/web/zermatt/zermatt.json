@@ -1,6 +1,7 @@
 {
   "modules": {
     "SandBox_CustomerWelcome": "./customer-welcome",
-    "SandBox_PriceExample": "./modules/price-example"
+    "SandBox_PriceExample": "./modules/price-example",
+    "SandBox_EventExample": "./modules/events"
   }
 }
