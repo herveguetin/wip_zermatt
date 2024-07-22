@@ -1,0 +1,59 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */
+
+use Magento\Framework\View\Element\Template; ?>
+<?php
+/** @var Template $block */
+?>
+<div x-show="showSuccess" x-data="{
+    showSuccess: false,
+    init() {
+        Zermatt.Event.on('myform:success', () => this.showSuccess = true)
+    }
+}">Form is valid!</div>
+
+<div x-data="Zermatt.Module('Zermatt_Form', {
+  onSuccess: () => Zermatt.Event.dispatch('myform:success'),
+  formData: {
+    name: '',
+    email: ''
+  }
+})" x-cloak>
+    <form action="<?= $block->getUrl('zermatt_examples/form') ?>">
+        <template x-if="form">
+            <div>
+                <div>
+                    <label for="name_field_id">Name</label>
+                    <input
+                        id="name_field_id"
+                        name="name"
+                        x-model="form.name"
+                        @change="validate('name')"
+                    />
+                    <template x-if="form.invalid('name')">
+                        <div x-text="form.errors.name" class="mage-error"></div>
+                    </template>
+                </div>
+
+                <div>
+                    <label for="email_field_id">Email</label>
+                    <input
+                        id="email_field_id"
+                        name="email"
+                        x-model="form.email"
+                        @change="validate('email')"
+                    />
+                    <template x-if="form.invalid('email')">
+                        <div x-text="form.errors.email" class="mage-error"></div>
+                    </template>
+                </div>
+
+                <div>
+                    <button @click.prevent="submit" :disabled="form.processing">Submit</button>
+                </div>
+            </div>
+        </template>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Sand\Box\Block\Product $block */
+$product = $block->getProduct();
+?>
+<div class="product-thumbnail">
+    <div x-data="{}" x-text="Zermatt.Url.slugify('Some human text')"></div>
+    <div x-data="{}" x-text="Zermatt.String.sprintf('My name is %s, aged %s', 'John', 45)"></div>
+    <?php zermatt_partial('Sand_Box::product-thumbnail/main-content.phtml', ['product' => $product]) ?>
+    <?php zermatt_partial('Sand_Box::product-thumbnail/add-to-cart.phtml', ['product' => $product]) ?>
+</div>

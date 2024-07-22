@@ -4,7 +4,9 @@
  */ ?>
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Catalog\Api\Data\ProductInterface $product */
+$product = $block->getProduct();
 ?>
-<div x-data="Zermatt.Module('SandBox_CustomerWelcome')">
-    Hello <span x-text="greet()"></span>
+<div class="media">
+    ... media content ...
 </div>

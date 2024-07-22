@@ -1,0 +1,13 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+$product = $block->getProduct();
+?>
+<div class="main-content">
+    <h2><?= $product->getName() ?></h2>
+    <?php zermatt_partial('Sand_Box::product-thumbnail/media.phtml', ['product' => $product]) ?>
+    <?php zermatt_partial('Sand_Box::product-thumbnail/info.phtml', ['product' => $product]) ?>
+</div>
