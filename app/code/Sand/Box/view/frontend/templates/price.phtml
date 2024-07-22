@@ -1,0 +1,14 @@
+<?php
+/**
+ * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
+ */ ?>
+<?php
+/** @var \Sand\Box\Block\Price $block */
+?>
+<?php
+$price = $block->getProduct()->getFinalPrice();
+?>
+<div x-data="Zermatt.Module('SandBox_PriceExample', {price: <?= $price ?>})">
+    <div>Unformatted price: <?= $price ?></div>
+    <div>Formatted price: <span x-text="myFormattedPrice()"></span></div>
+</div>

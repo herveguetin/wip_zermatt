@@ -5,6 +5,10 @@
             "path": "/Sand_Box/zermatt/customer-welcome"
         },
         {
+            "name": "SandBox_PriceExample",
+            "path": "/Sand_Box/zermatt/modules/price-example"
+        },
+        {
             "name": "ZermattExamples_Welcome",
             "path": "/Maddlen_ZermattExamples/zermatt/modules/welcome"
         },

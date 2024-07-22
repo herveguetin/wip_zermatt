@@ -7,6 +7,7 @@
     <body>
         <referenceContainer name="main.content">
             <block name="customer_data_view" template="Sand_Box::customer.phtml"/>
+            <block class="Sand\Box\Block\Price" name="sandbox_price" template="Sand_Box::price.phtml"/>
         </referenceContainer>
         <referenceContainer name="before.body.end">
             <block class="Sand\Box\Block\ZermattCustomerData" name="customer_data"/>
