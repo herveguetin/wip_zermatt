@@ -21,6 +21,10 @@
             "path": "/Maddlen_ZermattExamples/zermatt/modules/translation"
         },
         {
+            "name": "ZermattExamples_Bind",
+            "path": "/Maddlen_ZermattExamples/zermatt/modules/bind"
+        },
+        {
             "name": "Zermatt_Form",
             "path": "/Maddlen_ZermattForm/zermatt/modules/form"
         },
