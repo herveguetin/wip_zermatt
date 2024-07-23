@@ -27,10 +27,6 @@
         {
             "name": "Zermatt_Form",
             "path": "/Maddlen_ZermattForm/zermatt/modules/form"
-        },
-        {
-            "name": "alpineTest",
-            "path": "/zermatt/modules/alpine-test"
         }
     ],
     "rewrites": [
